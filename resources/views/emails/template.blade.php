@@ -503,7 +503,14 @@ ul.social li{
 	          	<p>Hi <b>{{session('thefullname')}}</b>, You are now registered as member of <b>Libacao Baptist Church</b></p><p>The most recent information about church events and announcements is now available to you.</p>
 	        	</div>
 	        </td>
-	      </tr><!-- end: tr -->
+	      </tr>
+		 <div style="background-color:black;padding:15px 0px 15px 0px;" align="center">
+			<span style="color:white;">Libacao Baptis Church</span>
+			<div style="padding-top:10px;">
+			<span style="color:white;">Dev_YRO</span>
+			</div>
+		 </div> 
+		  <!-- end: tr -->
           <!--
 	      <tr>
 		      <td class="bg_white">

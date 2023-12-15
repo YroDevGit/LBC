@@ -68,11 +68,11 @@
                     <div class="collapse navbar-collapse" id="navbarCollapse">
                         <div class="navbar-nav mx-auto">
                             <a href="{{url('')}}" class="nav-item nav-link active">Home</a>
-                            <a href="{{url('about')}}" class="nav-item nav-link">About</a>
+                            <a href="{{ route('about') }}" class="nav-item nav-link">About</a>
                             <a href="service.html" class="nav-item nav-link">Services</a>
                             <a href="program.html" class="nav-item nav-link">Programs</a>
                             <a href="event.html" class="nav-item nav-link">Events</a>
-                            <div class="nav-item dropdown">
+                            <div class="nav-item dropdown"> 
                                 <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
                                 <div class="dropdown-menu m-0 bg-secondary rounded-0">
                                     <a href="blog.html" class="dropdown-item">Our Blog</a>
@@ -142,9 +142,16 @@
     <script src="{{url('lib/waypoints/waypoints.min.js')}}"></script>
     <script src="{{url('lib/lightbox/js/lightbox.min.js')}}"></script>
     <script src="{{url('lib/owlcarousel/owl.carousel.min.js')}}"></script>
+ 
 
     <!-- Template Javascript -->
     <script src="{{url('js/main.js')}}"></script>
+    <script>
+        function loadingOn(){
+            document.getElementById('spinner').classList.add("show");
+        }
+    </script>
     </body>
 
 </html>
+

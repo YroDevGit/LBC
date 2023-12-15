@@ -1,5 +1,6 @@
  <!-- Footer Start -->
- <div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
+<div id="footerdiv">
+<div class="container-fluid footer py-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
                 <div class="row g-5">
                     <div class="col-md-6 col-lg-4 col-xl-3">
@@ -9,8 +10,40 @@
                             <div class="border border-primary p-3 rounded bg-light">
                                 <h5 class="mb-3">Newsletter</h5>
                                 <div class="position-relative mx-auto border border-primary rounded" style="max-width: 400px;">
-                                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
-                                    <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 text-white">SignUp</button>
+                                    <form action="{{route('addSubscribe')}}" method="post" onsubmit="loadingOn()">
+                                        @csrf
+                                    <input class="form-control border-0 w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email" name="email">
+                                    <button class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2 text-white" type="submit">SignUp</button>
+                                    </form>
+                                </div>
+                                <div>
+                                    <div class="text-primary">
+                                        @if(Session('subscribe'))
+                                            {{Session('subscribe')}}
+                                            <script>
+                                                function scrollDownAuto() {
+                                                    document.getElementById('footerdiv').scrollIntoView({ behavior: 'smooth' });
+                                                }
+
+                                                document.addEventListener('DOMContentLoaded', function() {
+                                                    scrollDownAuto();
+                                                });
+                                            </script>
+                                        @endif
+
+                                        @error('email')
+                                        {{$message}}
+                                        <script>
+                                                function scrollDownAuto() {
+                                                    document.getElementById('footerdiv').scrollIntoView({ behavior: 'smooth' });
+                                                }
+
+                                                document.addEventListener('DOMContentLoaded', function() {
+                                                    scrollDownAuto();
+                                                });
+                                            </script>
+                                        @enderror
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,6 +119,7 @@
                 </div>
             </div>
         </div>
+</div>
         <!-- Footer End -->
 
 
@@ -105,4 +139,6 @@
                 </div>
             </div>
         </div>
+
+        
         <!-- Copyright End -->

@@ -17,7 +17,7 @@ class login extends Controller
         ])->get();
 
         if($res->isNotEmpty()){
-            return redirect("admin");
+            return redirect()->route("admin");
         }
         else{
             return back()->with("msg","Inavalid login credentials");

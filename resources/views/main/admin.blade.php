@@ -36,7 +36,7 @@
                 </div>
                 <ul class="nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="dashboard.html">
+                        <a class="nav-link" href="{{route('dashboard')}}">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
@@ -45,6 +45,12 @@
                         <a class="nav-link" href="{{route('mem')}}">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>Members</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="nav-link" href="{{route('events')}}">
+                            <i class="nc-icon nc-circle-09"></i>
+                            <p>Events</p>
                         </a>
                     </li>
                     <li>

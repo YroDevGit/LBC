@@ -22,3 +22,8 @@ class events extends Controller
         return back()->with("success","Event added");
     }
 }
+
+
+
+
+
