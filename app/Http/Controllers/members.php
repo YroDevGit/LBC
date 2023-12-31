@@ -94,7 +94,20 @@ class members extends Controller
         $data = DB::select($query);
         return view("adm.extensions.userstbl",["data"=>$data]);
     }
+
+    public function verifyUser(Request $req){
+        $users = $req->users;
+        $result = member_model::where([
+            "stat" => "1",
+            "id" => $users,
+        ])->update([
+            "stat" => "0"
+        ]);
+        return back()->with("success","Data successfully updated");
+    }
 }
+
+
 
 
 ?>

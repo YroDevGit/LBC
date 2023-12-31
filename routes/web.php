@@ -88,6 +88,11 @@ Route::get("/admin/allUsers", function(){
     return view("adm.users");
 })->name("users");
 
+Route::get("admin/flushall",[cflush::class,"flushall"])->name('flusher');
+
+Route::get("/admin/searchtbl",[members::class,"searchUsers"]);
+
+Route::get("/admin/verify",[members::class,"verifyUser"]);
 
 
 
@@ -114,9 +119,8 @@ Route::post("AddEmailSubscribe",function(){
 })->name("addSubscribe");
 
 Route::post("Member/Join",[members::class,"joinUs"])->name('memberjoin');
-Route::get("admin/flushall",[cflush::class,"flushall"])->name('flusher');
 
-Route::get("/admin/searchtbl",[members::class,"searchUsers"]);
+
 
 
 

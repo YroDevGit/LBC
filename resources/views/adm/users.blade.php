@@ -34,7 +34,11 @@
                             </tbody>
                         </table>
                        </div>
-
+                        <div align="center">
+                            @if (Session('success'))
+                            <span>{{Session('success')}}</span>
+                            @endif
+                        </div>
                     </div>
                 </div>
             </div>
