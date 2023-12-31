@@ -15,14 +15,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
     <!-- CSS Files -->
     <link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+
     <link href="../assets/css/light-bootstrap-dashboard.css?v=2.0.0 " rel="stylesheet" />
     <!-- CSS Just for demo purpose, don't include it in your project -->
     <link href="../assets/css/demo.css" rel="stylesheet" />
+    <link rel="stylesheet" href="{{asset('BS3/assets/css/pe-icon-7-stroke.css')}}">
 </head>
 
 <body>
+    
     <div class="wrapper">
-        <div class="sidebar" data-image="../assets/img/sidebar-5.jpg">
+        <div class="sidebar" data-image="{{asset('BS3/assets/img/sidebar-5.jpg')}}">
             <!--
         Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
 
@@ -30,39 +33,39 @@
     -->
             <div class="sidebar-wrapper">
                 <div class="logo">
-                    <a href="http://www.creative-tim.com" class="simple-text">
-                        Creative Tim
+                    <a href="" class="simple-text">
+                        LIBACAO BAPTIST CHURCH
                     </a>
                 </div>
                 <ul class="nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="{{route('dashboard')}}">
+                    <li class="" id="page1">
+                        <a class="nav-link" href="{{route('dashboard')}}" onclick="showLoading()">
                             <i class="nc-icon nc-chart-pie-35"></i>
                             <p>Dashboard</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="{{route('mem')}}">
+                    <li id="page2" class="">
+                        <a class="nav-link" href="{{route('mem')}}" onclick="showLoading()">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>Members</p>
                         </a>
                     </li>
-                    <li>
-                        <a class="nav-link" href="{{route('events')}}">
+                    <li id="page3" class="">
+                        <a class="nav-link" href="{{route('events')}}" onclick="showLoading()">
                             <i class="nc-icon nc-circle-09"></i>
                             <p>Events</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./table.html">
-                            <i class="nc-icon nc-notes"></i>
-                            <p>Table List</p>
+                        <a class="nav-link" href="{{route('flush')}}" onclick="showLoading()">
+                            <i class="nc-icon pe-7s-gleam"></i>
+                            <p>Flush</p>
                         </a>
                     </li>
                     <li>
-                        <a class="nav-link" href="./typography.html">
+                        <a class="nav-link" href="{{route('users')}}">
                             <i class="nc-icon nc-paper-2"></i>
-                            <p>Typography</p>
+                            <p>Users</p>
                         </a>
                     </li>
                     <li>
@@ -83,7 +86,7 @@
                             <p>Notifications</p>
                         </a>
                     </li>
-                    <li class="nav-item active active-pro">
+                    <li class="nav-item active active-pro" style="display: none;">
                         <a class="nav-link active" href="upgrade.html">
                             <i class="nc-icon nc-alien-33"></i>
                             <p>Upgrade to PRO</p>
@@ -151,7 +154,7 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" onclick="return confirm('Are you sure to logout?')" href="{{route('logout')}}">
+                                <a class="nav-link" onclick="return confirm('Are you sure to logout?')" href="{{route('homepage')}}">
                                     <span class="no-icon">Log out</span>
                                 </a>
                             </li>
@@ -282,6 +285,8 @@
     </div>
 </div>
  -->
+ 
+ @include('special.loading');
 </body>
 <!--   Core JS Files   -->
 <script src="../assets/js/core/jquery.3.2.1.min.js" type="text/javascript"></script>
@@ -307,6 +312,20 @@
         //demo.showNotification();
 
     });
+
+    var page = {{$page}};
+    if(page==1){
+        document.getElementById('page1').classList.add('active');
+    }
+    if(page==2){
+        document.getElementById('page2').classList.add('active');
+    }
+    if(page==3){
+        document.getElementById('page3').classList.add('active');
+    }
+    if(page==4){
+        document.getElementById('page4').classList.add('active');
+    }
 </script>
 
 </html>

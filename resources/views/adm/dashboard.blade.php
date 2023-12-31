@@ -1,6 +1,9 @@
-@extends('main.admin')
+@extends('adm.main.admin')
 
 @section('content')
+@php
+    $page = 1;
+@endphp
 <div class="content">
                 <div class="container-fluid">
                     <div class="row">

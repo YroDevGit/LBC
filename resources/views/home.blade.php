@@ -24,7 +24,7 @@ $user_email = "";
                     <div class="col-lg-7 col-md-12">
                         <h1 class="mb-3 text-white">Jesus Cares for you</h1>
                         <h1 class="mb-5 display-1 text-white">Optimal location for time spent</h1>
-                        <a href="" class="btn btn-primary px-4 py-3 px-md-5  me-4 btn-border-radius">Get Started</a>
+                        <a href="{{route('register')}}" class="btn btn-primary px-4 py-3 px-md-5  me-4 btn-border-radius">Join us now</a>
                         <a href="" class="btn btn-primary px-4 py-3 px-md-5 btn-border-radius">Learn More</a>
                     </div>
                 </div>
@@ -39,7 +39,7 @@ $user_email = "";
                 <div class="row g-5 align-items-center">
                     <div class="col-lg-5 wow fadeIn" data-wow-delay="0.1s">
                         <div class="video border">
-                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.youtube.com/embed/DWRcNpR6Kdc" data-bs-target="#videoModal">
+                            <button type="button" class="btn btn-play" data-bs-toggle="modal" data-src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Flibacaobaptistchurchofficial%2Fvideos%2F1036049301052657%2F&show_text=false&width=267&t=0" data-bs-target="#videoModal">
                                 <span></span>
                             </button>
                         </div>
@@ -72,14 +72,14 @@ $user_email = "";
             <div class="modal-dialog">
                 <div class="modal-content rounded-0">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Youtube Video</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Sunday service</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
                         <!-- 16:9 aspect ratio -->
-                        <div class="ratio ratio-16x9">
-                            <iframe class="embed-responsive-item" src="" id="video" allowfullscreen allowscriptaccess="always"
-                                allow="autoplay"></iframe>
+                        <div class="ratio ratio-16x9 frame-ratio">
+                            <iframe class="" src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Flibacaobaptistchurchofficial%2Fvideos%2F1036049301052657%2F&show_text=false&width=267&t=0" id="videok" allowfullscreen allowscriptaccess="always"
+                                allow="autoplay" height="500" width="500"></iframe>
                         </div>
                     </div>
                 </div>
@@ -297,7 +297,7 @@ $user_email = "";
         <!-- Events End-->
 
 
-        <!-- Blog Start-->
+        <!-- Blog Start
         <div class="container-fluid blog py-5">
             <div class="container py-5">
                 <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 600px;">
@@ -395,7 +395,7 @@ $user_email = "";
                 </div>
             </div>
         </div>
-        <!-- Blog End-->
+         Blog End-->
 
 
         <!-- Team Start-->
@@ -575,6 +575,9 @@ $user_email = "";
 
 .tscroll::-webkit-scrollbar-thumb:hover {
   background-color: red; /* Color of the thumb on hover */
+}
+.frame-ratio{
+    height: 700px;
 }
         </style>
 

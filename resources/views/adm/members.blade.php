@@ -1,6 +1,10 @@
-@extends('main.admin')
+@extends('adm.main.admin')
 
 @section('content')
+@php
+   $page = 2;
+
+@endphp
 <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -10,7 +14,7 @@
                                     <h4 class="card-title">Add Profile</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form method="post" enctype="multipart/form-data" action="{{route('addmem')}}">
+                                    <form method="post" enctype="multipart/form-data" action="{{route('addmem')}}" onsubmit="showLoading()">
                                         @csrf
                                         <div class="row">
                                            

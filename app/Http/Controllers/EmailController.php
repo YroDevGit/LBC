@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Mail;
 use App\Mail\MyEmail;
 use App\Mail\subscription;
+use App\Mail\notify;
 
 use Illuminate\Http\Request;
 
@@ -23,5 +24,17 @@ class EmailController extends Controller
         ]);
         $email = $req->input("email");
         Mail::to($email)->send(new subscription("Subscribe", "sub"));
+    }
+
+    public function notifyMe($email,$subject,$message,$address){
+        $functions = new functions();
+        $fulldate = $functions->getDateFormat($message);
+        Mail::to($email)->send(new notify($subject, $fulldate));
+        session(["address"=>$address]); 
+    }
+
+   
+    public function sendEmail($email, $subject, $message){
+        Mail::to($email)->send(new subscription($subject, $message));
     }
 }

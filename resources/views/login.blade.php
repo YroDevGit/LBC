@@ -18,7 +18,7 @@
         <div class="text-center mt-4 name">
             Baptist Church
         </div>
-        <form class="p-3 mt-3" method="POST" action="{{route('log')}}">
+        <form class="p-3 mt-3" method="POST" action="{{route('log')}}" onsubmit="showLoading()">
             @csrf
             <div align="center" class="form-field">
                 @if(Session('msg'))
@@ -39,6 +39,7 @@
             <a href="{{url('')}}">I'm not autorized here.</a>
         </div>
     </div>
+    @include('special.loading');
 </body>
 </html>
 

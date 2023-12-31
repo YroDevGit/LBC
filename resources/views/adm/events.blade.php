@@ -1,6 +1,9 @@
-@extends('main.admin')
+@extends('adm.main.admin')
 
 @section('content')
+@php
+    $page =3;
+@endphp
 <div class="content">
                 <div class="container-fluid">
                     <div class="row">
@@ -10,7 +13,7 @@
                                     <h4 class="card-title">Add Events</h4>
                                 </div>
                                 <div class="card-body">
-                                    <form method="post" enctype="multipart/form-data" action="{{route('addevt')}}">
+                                    <form method="post" enctype="multipart/form-data" action="{{route('addevt')}}" onsubmit="showLoading()">
                                         @csrf
                                         <div class="row">
                                            
@@ -80,7 +83,7 @@
                                 <div class="card-body">
                                     <div class="author">
                                         <a href="#">
-                                            <img class="avatar border-gray" src="{{asset('../assets/img/faces/face-0.jpg')}}" alt="..." id="imgcanvas" height="300" width="300">
+                                            <img class="avatar border-gray" src="{{asset('../assets/img/apple-icon.png')}}" alt="..." id="imgcanvas" height="300" width="300">
                                             <h5 class="title">Libacao Baptist Church</h5>
                                         </a>
                                         <p class="description">

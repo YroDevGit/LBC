@@ -6,6 +6,7 @@ use App\Http\Controllers\subscribe;
 use App\Http\Controllers\login;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\events;
+use App\Http\Controllers\cflush;
 use Illuminate\Http\Request;
 
 /*
@@ -25,6 +26,7 @@ Route::get("pages", function(){
 
 //Homepage
 Route::get("",[members::class,"showHomepage"]);
+Route::get("homepage",[members::class,"showHomepage"])->name("homepage");
 
 //Login
 Route::get("login",function(){
@@ -74,6 +76,19 @@ Route::get("admin/dashboard",function(){
     return view('adm.dashboard');
 })->name("dashboard");
 
+//To register page
+Route::get("registration", function(){
+return view("register");
+})->name("register");
+
+Route::get("admin/flush", function(){
+    return view("adm.flush");
+})->name("flush");
+Route::get("/admin/allUsers", function(){
+    return view("adm.users");
+})->name("users");
+
+
 
 
 /*post area*/
@@ -97,6 +112,11 @@ Route::post("AddEmailSubscribe",function(){
     app()->call([subscribe::class,"subscribe"]);
     return back()->with("subscribe","Your email now received updates");
 })->name("addSubscribe");
+
+Route::post("Member/Join",[members::class,"joinUs"])->name('memberjoin');
+Route::get("admin/flushall",[cflush::class,"flushall"])->name('flusher');
+
+Route::get("/admin/searchtbl",[members::class,"searchUsers"]);
 
 
 
