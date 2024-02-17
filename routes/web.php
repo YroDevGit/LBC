@@ -27,6 +27,9 @@ Route::get("pages", function(){
 //Homepage
 Route::get("",[members::class,"showHomepage"]);
 Route::get("homepage",[members::class,"showHomepage"])->name("homepage");
+Route::get("tyrone",function(){
+return view('new');
+});
 
 //Login
 Route::get("login",function(){

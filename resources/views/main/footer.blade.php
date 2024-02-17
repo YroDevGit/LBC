@@ -49,17 +49,8 @@
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3">
-                        <div class="footer-item">
-                            <div class="d-flex flex-column p-4 ps-5 text-dark border border-primary" 
-                            style="border-radius: 50% 20% / 10% 40%;">
-                                <p>Monday: N/A</p>
-                                <p>Tuesday: N/A</p>
-                                <p>Wednesfay: Prayer Meeting 5pm</p>
-                                <p>Thursday: N/A</p>
-                                <p>Friday: Praise and worship practice</p>
-                                <p>Saturday: N/A</p>
-                                <p class="mb-0">Sunday: Closed</p>
-                            </div>
+                        <div class="footer-item" id="schedules">
+                            
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3">
@@ -70,49 +61,20 @@
                                 <a href="" class="text-start rounded-0 text-body mb-4"><i class="fa fa-phone-alt text-primary me-2"></i> {{session('userPhone')}}</a>
                                 <a href="" class="text-start rounded-0 text-body mb-4"><i class="fas fa-envelope text-primary me-2"></i> tyronemalocon@gmail.com</a>
                                 <a href="" class="text-start rounded-0 text-body mb-4"><i class="fa fa-clock text-primary me-2"></i> 26/7 Hours Service</a>
-                                <div class="footer-icon d-flex">
-                                    <a class="btn btn-primary btn-sm-square me-3 rounded-circle text-white" href=""><i class="fab fa-facebook-f"></i></a>
-                                    <a class="btn btn-primary btn-sm-square me-3 rounded-circle text-white" href=""><i class="fab fa-twitter"></i></a>
-                                    <a href="#" class="btn btn-primary btn-sm-square me-3 rounded-circle text-white"><i class="fab fa-instagram"></i></a>
-                                    <a href="#" class="btn btn-primary btn-sm-square rounded-circle text-white"><i class="fab fa-linkedin-in"></i></a>
-                                </div>
+                                <div id="socialmedia"></div>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6 col-lg-4 col-xl-3">
                         <div class="footer-item">
-                            <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">OUR GALLARY</h4>
+                            <h4 class="text-primary mb-4 border-bottom border-primary border-2 d-inline-block p-2 title-border-radius">SUPPORT US</h4>
                             <div class="row g-3">
-                                <div class="col-4">
-                                    <div class="footer-galary-img rounded-circle border border-primary">
-                                        <img src="img/galary-1.jpg" class="img-fluid rounded-circle p-2" alt="">
+                                <div class="col-4" align="center">
+                                    <div class="  border-primary" id="gcash">
+                                        
                                     </div>
                                </div>
-                               <div class="col-4">
-                                    <div class="footer-galary-img rounded-circle border border-primary">
-                                        <img src="img/galary-2.jpg" class="img-fluid rounded-circle p-2" alt="">
-                                    </div>
-                               </div>
-                                <div class="col-4">
-                                    <div class="footer-galary-img rounded-circle border border-primary">
-                                        <img src="img/galary-3.jpg" class="img-fluid rounded-circle p-2" alt="">
-                                    </div>
-                               </div>
-                                <div class="col-4">
-                                    <div class="footer-galary-img rounded-circle border border-primary">
-                                        <img src="img/galary-4.jpg" class="img-fluid rounded-circle p-2" alt="">
-                                    </div>
-                               </div>
-                                <div class="col-4">
-                                    <div class="footer-galary-img rounded-circle border border-primary">
-                                        <img src="img/galary-5.jpg" class="img-fluid rounded-circle p-2" alt="">
-                                    </div>
-                               </div>
-                                <div class="col-4">
-                                    <div class="footer-galary-img rounded-circle border border-primary">
-                                        <img src="img/galary-6.jpg" class="img-fluid rounded-circle p-2" alt="">
-                                    </div>
-                               </div>
+                               
                             </div>
                         </div>
                     </div>
@@ -128,17 +90,18 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>Your Site Name</a>, All right reserved.</span>
+                        <span class="text-light"><a href="#"><i class="fas fa-copyright text-light me-2"></i>YRO'S</a>, All right reserved.</span>
                     </div>
                     <div class="col-md-6 my-auto text-center text-md-end text-white">
                         <!--/*** This template is free as long as you keep the below author’s credit link/attribution link/backlink. ***/-->
                         <!--/*** If you'd like to use the template without the below author’s credit link/attribution link/backlink, ***/-->
                         <!--/*** you can purchase the Credit Removal License from "https://htmlcodex.com/credit-removal". ***/-->
-                        Designed By <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
+                        Designed By <span id="developer"></span>
                     </div>
                 </div>
             </div>
         </div>
 
+        <script src="{{mix('js/app.js')}}"></script>
         
         <!-- Copyright End -->
