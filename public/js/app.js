@@ -2135,6 +2135,53 @@ function App() {
 
 /***/ }),
 
+/***/ "./resources/reactjs/src/homepage.js":
+/*!*******************************************!*\
+  !*** ./resources/reactjs/src/homepage.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./resources/reactjs/node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
+function _iterableToArrayLimit(r, l) { var t = null == r ? null : "undefined" != typeof Symbol && r[Symbol.iterator] || r["@@iterator"]; if (null != t) { var e, n, i, u, a = [], f = !0, o = !1; try { if (i = (t = t.call(r)).next, 0 === l) { if (Object(t) !== t) return; f = !1; } else for (; !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l); f = !0); } catch (r) { o = !0, n = r; } finally { try { if (!f && null != t["return"] && (u = t["return"](), Object(u) !== u)) return; } finally { if (o) throw n; } } return a; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+function Datas(_ref) {
+  var values = _ref.values;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+    _useState2 = _slicedToArray(_useState, 2),
+    data = _useState2[0],
+    setData = _useState2[1];
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    fetch('api/datas').then(function (response) {
+      return response.json();
+    }).then(function (jsonData) {
+      setData(jsonData);
+    })["catch"](function (error) {
+      return console.error('Error fetching data:', error);
+    });
+  }, []);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("span", null, data.map(function (column, index) {
+    return values == "email" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: 'mailto:' + column.email
+    }, column.email) : values == "phone" ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
+      href: 'tel:' + column.phone
+    }, column.phone) : null;
+  }));
+}
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Datas);
+
+/***/ }),
+
 /***/ "./resources/reactjs/src/index.js":
 /*!****************************************!*\
   !*** ./resources/reactjs/src/index.js ***!
@@ -2143,76 +2190,113 @@ function App() {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./resources/reactjs/node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom/client */ "./resources/reactjs/node_modules/react-dom/client.js");
-/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./index.css */ "./resources/reactjs/src/index.css");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom */ "./resources/reactjs/node_modules/react-dom/index.js");
+/* harmony import */ var _index_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./index.css */ "./resources/reactjs/src/index.css");
+/* harmony import */ var _reportWebVitals__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./reportWebVitals */ "./resources/reactjs/src/reportWebVitals.js");
 /* harmony import */ var _App__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./App */ "./resources/reactjs/src/App.js");
+/* harmony import */ var _homepage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./homepage */ "./resources/reactjs/src/homepage.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! react */ "./resources/reactjs/node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_5__);
+
+
 
 
 
 
 
 // Link: landing>footer>developer
-var dev = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('developer'));
-dev.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-  href: "https://facebool.com/crushmo.05",
-  target: "_blank"
-}, "Yro"));
+try {
+  react_dom__WEBPACK_IMPORTED_MODULE_0__.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement((react__WEBPACK_IMPORTED_MODULE_5___default().StrictMode), null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement(_homepage__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    values: "email"
+  })), document.getElementById('developer'));
 
-// Link: Landing>footer>schedules
-var schedules = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('schedules'));
-schedules.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-  className: "d-flex flex-column p-4 ps-5 text-dark border border-primary",
-  style: {
-    borderRadius: '50% 20% / 10% 40%'
-  }
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Monday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Tuesday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Wednesfay: Prayer Meeting 5pm"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Thursday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Friday: Praise and worship practice"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, "Saturday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", {
-  className: "mb-0"
-}, "Sunday: Closed")));
+  // Link: Landing>footer>schedules
+  var schedules = react_dom__WEBPACK_IMPORTED_MODULE_0__.createRoot(document.getElementById('schedules'));
+  schedules.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("div", {
+    className: "d-flex flex-column p-4 ps-5 text-dark border border-primary",
+    style: {
+      borderRadius: '50% 20% / 10% 40%'
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", null, "Monday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", null, "Tuesday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", null, "Wednesfay: Prayer Meeting 5pm"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", null, "Thursday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", null, "Friday: Praise and worship practice"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", null, "Saturday: N/A"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("p", {
+    className: "mb-0"
+  }, "Sunday: Closed")));
 
-// Link: Landing>footer>schedules
-var gcash = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('gcash'));
-gcash.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("img", {
-  src: "img/gcash.png",
-  className: "",
-  alt: "gcash",
-  height: "300",
-  width: "300"
-}));
-var socialmedia = react_dom_client__WEBPACK_IMPORTED_MODULE_1__.createRoot(document.getElementById('socialmedia'));
-socialmedia.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
-  className: "footer-icon d-flex"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-  className: "btn btn-primary btn-sm-square me-3 rounded-circle text-white",
-  href: "#",
-  "aria-label": "Facebook"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-  className: "fab fa-facebook-f"
-})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-  className: "btn btn-primary btn-sm-square me-3 rounded-circle text-white",
-  href: "#",
-  "aria-label": "Twitter"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-  className: "fab fa-twitter"
-})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-  className: "btn btn-primary btn-sm-square me-3 rounded-circle text-white",
-  href: "#",
-  "aria-label": "Instagram"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-  className: "fab fa-instagram"
-})), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("a", {
-  className: "btn btn-primary btn-sm-square rounded-circle text-white",
-  href: "#",
-  "aria-label": "LinkedIn"
-}, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("i", {
-  className: "fab fa-linkedin-in"
-}))));
+  // Link: Landing>footer>schedules
+  var gcash = react_dom__WEBPACK_IMPORTED_MODULE_0__.createRoot(document.getElementById('gcash'));
+  gcash.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("img", {
+    src: "img/gcash.png",
+    className: "",
+    alt: "gcash",
+    height: "300",
+    width: "300"
+  }));
+  var socialmedia = react_dom__WEBPACK_IMPORTED_MODULE_0__.createRoot(document.getElementById('socialmedia'));
+  socialmedia.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("div", {
+    className: "footer-icon d-flex"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("a", {
+    className: "btn btn-primary btn-sm-square me-3 rounded-circle text-white",
+    href: "#",
+    "aria-label": "Facebook"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("i", {
+    className: "fab fa-facebook-f"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("a", {
+    className: "btn btn-primary btn-sm-square me-3 rounded-circle text-white",
+    href: "#",
+    "aria-label": "Twitter"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("i", {
+    className: "fab fa-twitter"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("a", {
+    className: "btn btn-primary btn-sm-square me-3 rounded-circle text-white",
+    href: "#",
+    "aria-label": "Instagram"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("i", {
+    className: "fab fa-instagram"
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("a", {
+    className: "btn btn-primary btn-sm-square rounded-circle text-white",
+    href: "#",
+    "aria-label": "LinkedIn"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_5___default().createElement("i", {
+    className: "fab fa-linkedin-in"
+  }))));
+} catch (error) {
+  console.error('An error occurred while rendering:', error);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+(0,_reportWebVitals__WEBPACK_IMPORTED_MODULE_2__["default"])();
+
+/***/ }),
+
+/***/ "./resources/reactjs/src/reportWebVitals.js":
+/*!**************************************************!*\
+  !*** ./resources/reactjs/src/reportWebVitals.js ***!
+  \**************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var reportWebVitals = function reportWebVitals(onPerfEntry) {
+  if (onPerfEntry && onPerfEntry instanceof Function) {
+    __webpack_require__.e(/*! import() */ "resources_reactjs_node_modules_web-vitals_dist_web-vitals_js").then(__webpack_require__.bind(__webpack_require__, /*! web-vitals */ "./resources/reactjs/node_modules/web-vitals/dist/web-vitals.js")).then(function (_ref) {
+      var getCLS = _ref.getCLS,
+        getFID = _ref.getFID,
+        getFCP = _ref.getFCP,
+        getLCP = _ref.getLCP,
+        getTTFB = _ref.getTTFB;
+      getCLS(onPerfEntry);
+      getFID(onPerfEntry);
+      getFCP(onPerfEntry);
+      getLCP(onPerfEntry);
+      getTTFB(onPerfEntry);
+    });
+  }
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (reportWebVitals);
 
 /***/ }),
 
@@ -49987,39 +50071,6 @@ if (
 
 /***/ }),
 
-/***/ "./resources/reactjs/node_modules/react-dom/client.js":
-/*!************************************************************!*\
-  !*** ./resources/reactjs/node_modules/react-dom/client.js ***!
-  \************************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var m = __webpack_require__(/*! react-dom */ "./resources/reactjs/node_modules/react-dom/index.js");
-if (false) {} else {
-  var i = m.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED;
-  exports.createRoot = function(c, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.createRoot(c, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-  exports.hydrateRoot = function(c, h, o) {
-    i.usingClientEntryPoint = true;
-    try {
-      return m.hydrateRoot(c, h, o);
-    } finally {
-      i.usingClientEntryPoint = false;
-    }
-  };
-}
-
-
-/***/ }),
-
 /***/ "./resources/reactjs/node_modules/react-dom/index.js":
 /*!***********************************************************!*\
   !*** ./resources/reactjs/node_modules/react-dom/index.js ***!
@@ -53592,6 +53643,39 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/ensure chunk */
+/******/ 	(() => {
+/******/ 		__webpack_require__.f = {};
+/******/ 		// This file contains only the entry chunk.
+/******/ 		// The chunk loading function for additional chunks
+/******/ 		__webpack_require__.e = (chunkId) => {
+/******/ 			return Promise.all(Object.keys(__webpack_require__.f).reduce((promises, key) => {
+/******/ 				__webpack_require__.f[key](chunkId, promises);
+/******/ 				return promises;
+/******/ 			}, []));
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get javascript chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference async chunks
+/******/ 		__webpack_require__.u = (chunkId) => {
+/******/ 			// return url for filenames not based on template
+/******/ 			if (chunkId === "resources_reactjs_node_modules_web-vitals_dist_web-vitals_js") return "js/" + chunkId + ".js";
+/******/ 			// return url for filenames based on template
+/******/ 			return undefined;
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/get mini-css chunk filename */
+/******/ 	(() => {
+/******/ 		// This function allow to reference all chunks
+/******/ 		__webpack_require__.miniCssF = (chunkId) => {
+/******/ 			// return url for filenames based on template
+/******/ 			return "" + chunkId + ".css";
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/global */
 /******/ 	(() => {
 /******/ 		__webpack_require__.g = (function() {
@@ -53607,6 +53691,52 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 	/* webpack/runtime/hasOwnProperty shorthand */
 /******/ 	(() => {
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/load script */
+/******/ 	(() => {
+/******/ 		var inProgress = {};
+/******/ 		// data-webpack is not used as build has no uniqueName
+/******/ 		// loadScript function to load a script via script tag
+/******/ 		__webpack_require__.l = (url, done, key, chunkId) => {
+/******/ 			if(inProgress[url]) { inProgress[url].push(done); return; }
+/******/ 			var script, needAttach;
+/******/ 			if(key !== undefined) {
+/******/ 				var scripts = document.getElementsByTagName("script");
+/******/ 				for(var i = 0; i < scripts.length; i++) {
+/******/ 					var s = scripts[i];
+/******/ 					if(s.getAttribute("src") == url) { script = s; break; }
+/******/ 				}
+/******/ 			}
+/******/ 			if(!script) {
+/******/ 				needAttach = true;
+/******/ 				script = document.createElement('script');
+/******/ 		
+/******/ 				script.charset = 'utf-8';
+/******/ 				script.timeout = 120;
+/******/ 				if (__webpack_require__.nc) {
+/******/ 					script.setAttribute("nonce", __webpack_require__.nc);
+/******/ 				}
+/******/ 		
+/******/ 		
+/******/ 				script.src = url;
+/******/ 			}
+/******/ 			inProgress[url] = [done];
+/******/ 			var onScriptComplete = (prev, event) => {
+/******/ 				// avoid mem leaks in IE.
+/******/ 				script.onerror = script.onload = null;
+/******/ 				clearTimeout(timeout);
+/******/ 				var doneFns = inProgress[url];
+/******/ 				delete inProgress[url];
+/******/ 				script.parentNode && script.parentNode.removeChild(script);
+/******/ 				doneFns && doneFns.forEach((fn) => (fn(event)));
+/******/ 				if(prev) return prev(event);
+/******/ 			}
+/******/ 			var timeout = setTimeout(onScriptComplete.bind(null, undefined, { type: 'timeout', target: script }), 120000);
+/******/ 			script.onerror = onScriptComplete.bind(null, script.onerror);
+/******/ 			script.onload = onScriptComplete.bind(null, script.onload);
+/******/ 			needAttach && document.head.appendChild(script);
+/******/ 		};
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/make namespace object */
@@ -53629,6 +53759,11 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 		};
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/publicPath */
+/******/ 	(() => {
+/******/ 		__webpack_require__.p = "/";
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
 /******/ 	(() => {
 /******/ 		// no baseURI
@@ -53641,7 +53776,44 @@ module.exports = /*#__PURE__*/JSON.parse('{"name":"axios","version":"0.21.4","de
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
-/******/ 		// no chunk on demand loading
+/******/ 		__webpack_require__.f.j = (chunkId, promises) => {
+/******/ 				// JSONP chunk loading for javascript
+/******/ 				var installedChunkData = __webpack_require__.o(installedChunks, chunkId) ? installedChunks[chunkId] : undefined;
+/******/ 				if(installedChunkData !== 0) { // 0 means "already installed".
+/******/ 		
+/******/ 					// a Promise means "currently loading".
+/******/ 					if(installedChunkData) {
+/******/ 						promises.push(installedChunkData[2]);
+/******/ 					} else {
+/******/ 						if("css/app" != chunkId) {
+/******/ 							// setup Promise in chunk cache
+/******/ 							var promise = new Promise((resolve, reject) => (installedChunkData = installedChunks[chunkId] = [resolve, reject]));
+/******/ 							promises.push(installedChunkData[2] = promise);
+/******/ 		
+/******/ 							// start chunk loading
+/******/ 							var url = __webpack_require__.p + __webpack_require__.u(chunkId);
+/******/ 							// create error before stack unwound to get useful stacktrace later
+/******/ 							var error = new Error();
+/******/ 							var loadingEnded = (event) => {
+/******/ 								if(__webpack_require__.o(installedChunks, chunkId)) {
+/******/ 									installedChunkData = installedChunks[chunkId];
+/******/ 									if(installedChunkData !== 0) installedChunks[chunkId] = undefined;
+/******/ 									if(installedChunkData) {
+/******/ 										var errorType = event && (event.type === 'load' ? 'missing' : event.type);
+/******/ 										var realSrc = event && event.target && event.target.src;
+/******/ 										error.message = 'Loading chunk ' + chunkId + ' failed.\n(' + errorType + ': ' + realSrc + ')';
+/******/ 										error.name = 'ChunkLoadError';
+/******/ 										error.type = errorType;
+/******/ 										error.request = realSrc;
+/******/ 										installedChunkData[1](error);
+/******/ 									}
+/******/ 								}
+/******/ 							};
+/******/ 							__webpack_require__.l(url, loadingEnded, "chunk-" + chunkId, chunkId);
+/******/ 						} else installedChunks[chunkId] = 0;
+/******/ 					}
+/******/ 				}
+/******/ 		};
 /******/ 		
 /******/ 		// no prefetching
 /******/ 		

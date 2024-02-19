@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\members;
 use App\Http\Controllers\subscribe;
 use App\Http\Controllers\login;
+use App\Http\Controllers\cdata;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\events;
 use App\Http\Controllers\cflush;
@@ -53,6 +54,7 @@ Route::get("admin",function(){
 
 //members page
 Route::get("admin/members",[members::class,"index"])->name("mem");
+Route::get("api/datas",[cdata::class,'react_datas']);
 
 
 //logout
